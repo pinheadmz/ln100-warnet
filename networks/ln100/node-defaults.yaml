@@ -1,0 +1,4 @@
+imported_from: /Users/matthewzipkin/Desktop/work/warnet/test/data/LN_100.json
+lnd:
+  config: |
+    num-restricted-slots=200

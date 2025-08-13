@@ -1,0 +1,1760 @@
+nodes:
+- name: tank-0000
+  ln:
+    lnd: true
+  lnd:
+    channels:
+    - id:
+        block: 500
+        index: 14
+      target: tank-0048-ln
+      capacity: 130000
+      push_amt: 65000
+      source_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 1
+        htlc_maximum_msat: 128700000
+      target_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 1
+        htlc_maximum_msat: 128700000
+    - id:
+        block: 500
+        index: 24
+      target: tank-0006-ln
+      capacity: 300000
+      push_amt: 150000
+      source_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 1
+        htlc_maximum_msat: 297000000
+      target_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 0
+        fee_proportional_millionths: 50
+        htlc_maximum_msat: 297000000
+    - id:
+        block: 500
+        index: 25
+      target: tank-0004-ln
+      capacity: 500000
+      push_amt: 250000
+      source_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 1
+        htlc_maximum_msat: 495000000
+      target_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 10
+        htlc_maximum_msat: 495000000
+  addnode:
+  - tank-0049
+- name: tank-0001
+  ln:
+    lnd: true
+  lnd:
+    channels:
+    - id:
+        block: 500
+        index: 53
+      target: tank-0025-ln
+      capacity: 50000
+      push_amt: 25000
+      source_policy:
+        cltv_expiry_delta: 80
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 1
+        htlc_maximum_msat: 49500000
+      target_policy:
+        cltv_expiry_delta: 80
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 1
+        htlc_maximum_msat: 49500000
+  addnode:
+  - tank-0000
+- name: tank-0002
+  ln:
+    lnd: true
+  lnd:
+    channels:
+    - id:
+        block: 500
+        index: 51
+      target: tank-0025-ln
+      capacity: 2000000
+      push_amt: 1000000
+      source_policy:
+        cltv_expiry_delta: 80
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 1
+        htlc_maximum_msat: 2000000000
+      target_policy:
+        cltv_expiry_delta: 34
+        htlc_minimum_msat: 1
+        fee_base_msat: 5805
+        fee_proportional_millionths: 6
+        htlc_maximum_msat: 1980000000
+  addnode:
+  - tank-0001
+- name: tank-0003
+  ln:
+    lnd: true
+  lnd:
+    channels:
+    - id:
+        block: 500
+        index: 71
+      target: tank-0038-ln
+      capacity: 100000
+      push_amt: 50000
+      source_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 1
+        htlc_maximum_msat: 99000000
+      target_policy:
+        cltv_expiry_delta: 80
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 1
+        htlc_maximum_msat: 99000000
+  addnode:
+  - tank-0002
+- name: tank-0004
+  ln:
+    lnd: true
+  lnd:
+    channels:
+    - id:
+        block: 500
+        index: 39
+      target: tank-0024-ln
+      capacity: 2000000
+      push_amt: 1000000
+      source_policy:
+        cltv_expiry_delta: 80
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 1000
+        htlc_maximum_msat: 1980000000
+      target_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 10
+        htlc_maximum_msat: 1980000000
+    - id:
+        block: 500
+        index: 40
+      target: tank-0047-ln
+      capacity: 2000000
+      push_amt: 1000000
+      source_policy:
+        cltv_expiry_delta: 80
+        htlc_minimum_msat: 1000
+        fee_base_msat: 0
+        fee_proportional_millionths: 159
+        htlc_maximum_msat: 1980000000
+      target_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 10
+        htlc_maximum_msat: 1980000000
+    - id:
+        block: 500
+        index: 41
+      target: tank-0029-ln
+      capacity: 2000000
+      push_amt: 1000000
+      source_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 0
+        fee_proportional_millionths: 499
+        htlc_maximum_msat: 1980000000
+      target_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 10
+        htlc_maximum_msat: 1980000000
+    - id:
+        block: 500
+        index: 43
+      target: tank-0021-ln
+      capacity: 2000000
+      push_amt: 1000000
+      source_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 100
+        fee_proportional_millionths: 10
+        htlc_maximum_msat: 1980000000
+      target_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 10
+        htlc_maximum_msat: 1980000000
+    - id:
+        block: 500
+        index: 44
+      target: tank-0048-ln
+      capacity: 2000000
+      push_amt: 1000000
+      source_policy:
+        cltv_expiry_delta: 80
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 1
+        htlc_maximum_msat: 1980000000
+      target_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 10
+        htlc_maximum_msat: 1980000000
+    - id:
+        block: 500
+        index: 46
+      target: tank-0022-ln
+      capacity: 2000000
+      push_amt: 1000000
+      source_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 10
+        htlc_maximum_msat: 1980000000
+      target_policy:
+        cltv_expiry_delta: 222
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 2000
+        htlc_maximum_msat: 1980000000
+    - id:
+        block: 500
+        index: 47
+      target: tank-0032-ln
+      capacity: 2000000
+      push_amt: 1000000
+      source_policy:
+        cltv_expiry_delta: 80
+        htlc_minimum_msat: 10000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 90
+        htlc_maximum_msat: 1980000000
+      target_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 10
+        htlc_maximum_msat: 1980000000
+    - id:
+        block: 500
+        index: 48
+      target: tank-0007-ln
+      capacity: 2000000
+      push_amt: 1000000
+      source_policy:
+        cltv_expiry_delta: 80
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 1
+        htlc_maximum_msat: 1980000000
+      target_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 10
+        htlc_maximum_msat: 1980000000
+    - id:
+        block: 500
+        index: 49
+      target: tank-0013-ln
+      capacity: 2000000
+      push_amt: 1000000
+      source_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 10
+        htlc_maximum_msat: 1980000000
+      target_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 1
+        htlc_maximum_msat: 1980000000
+    - id:
+        block: 500
+        index: 68
+      target: tank-0031-ln
+      capacity: 3000000
+      push_amt: 1500000
+      source_policy:
+        cltv_expiry_delta: 200
+        htlc_minimum_msat: 1000
+        fee_base_msat: 500
+        fee_proportional_millionths: 2000
+        htlc_maximum_msat: 2970000000
+      target_policy:
+        cltv_expiry_delta: 80
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 1
+        htlc_maximum_msat: 2970000000
+  addnode:
+  - tank-0003
+- name: tank-0005
+  ln:
+    lnd: true
+  lnd:
+    channels:
+    - id:
+        block: 500
+        index: 67
+      target: tank-0024-ln
+      capacity: 25000000
+      push_amt: 12500000
+      source_policy:
+        cltv_expiry_delta: 80
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 1000
+        htlc_maximum_msat: 24750000000
+      target_policy:
+        cltv_expiry_delta: 80
+        htlc_minimum_msat: 1000
+        fee_base_msat: 0
+        fee_proportional_millionths: 500
+        htlc_maximum_msat: 24750000000
+    - id:
+        block: 500
+        index: 69
+      target: tank-0022-ln
+      capacity: 25000000
+      push_amt: 12500000
+      source_policy:
+        cltv_expiry_delta: 80
+        htlc_minimum_msat: 1000
+        fee_base_msat: 0
+        fee_proportional_millionths: 500
+        htlc_maximum_msat: 24750000000
+      target_policy:
+        cltv_expiry_delta: 222
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 2000
+        htlc_maximum_msat: 24750000000
+    - id:
+        block: 500
+        index: 70
+      target: tank-0043-ln
+      capacity: 100000000
+      push_amt: 50000000
+      source_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 0
+        fee_proportional_millionths: 0
+        htlc_maximum_msat: 99000000000
+      target_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 0
+        fee_proportional_millionths: 0
+        htlc_maximum_msat: 99000000000
+    - id:
+        block: 500
+        index: 73
+      target: tank-0044-ln
+      capacity: 99995000
+      push_amt: 49997500
+      source_policy:
+        cltv_expiry_delta: 144
+        htlc_minimum_msat: 1
+        fee_base_msat: 1000
+        fee_proportional_millionths: 999
+        htlc_maximum_msat: 20000000000
+      target_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 0
+        fee_proportional_millionths: 750
+        htlc_maximum_msat: 20000000000
+    - id:
+        block: 500
+        index: 77
+      target: tank-0015-ln
+      capacity: 16770000
+      push_amt: 8385000
+      source_policy:
+        cltv_expiry_delta: 72
+        htlc_minimum_msat: 1
+        fee_base_msat: 2147483647
+        fee_proportional_millionths: 2147483647
+        htlc_maximum_msat: 15093000000
+      target_policy:
+        cltv_expiry_delta: 80
+        htlc_minimum_msat: 1000
+        fee_base_msat: 0
+        fee_proportional_millionths: 500
+        htlc_maximum_msat: 1677000000
+    - id:
+        block: 500
+        index: 78
+      target: tank-0020-ln
+      capacity: 16770000
+      push_amt: 8385000
+      source_policy:
+        cltv_expiry_delta: 72
+        htlc_minimum_msat: 1
+        fee_base_msat: 2147483647
+        fee_proportional_millionths: 2147483647
+        htlc_maximum_msat: 15093000000
+      target_policy:
+        cltv_expiry_delta: 80
+        htlc_minimum_msat: 1000
+        fee_base_msat: 0
+        fee_proportional_millionths: 500
+        htlc_maximum_msat: 1677000000
+  addnode:
+  - tank-0004
+- name: tank-0006
+  ln:
+    lnd: true
+  lnd:
+    channels:
+    - id:
+        block: 500
+        index: 23
+      target: tank-0014-ln
+      capacity: 500000
+      push_amt: 250000
+      source_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 0
+        fee_proportional_millionths: 50
+        htlc_maximum_msat: 495000000
+      target_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 500
+        fee_proportional_millionths: 300
+        htlc_maximum_msat: 495000000
+  addnode:
+  - tank-0005
+- name: tank-0007
+  ln:
+    lnd: true
+  lnd:
+    channels:
+    - id:
+        block: 500
+        index: 50
+      target: tank-0049-ln
+      capacity: 10000000
+      push_amt: 5000000
+      source_policy:
+        cltv_expiry_delta: 140
+        htlc_minimum_msat: 100
+        fee_base_msat: 2000
+        fee_proportional_millionths: 2500
+        htlc_maximum_msat: 9900000000
+      target_policy:
+        cltv_expiry_delta: 80
+        htlc_minimum_msat: 1000
+        fee_base_msat: 0
+        fee_proportional_millionths: 500
+        htlc_maximum_msat: 9900000000
+    - id:
+        block: 500
+        index: 65
+      target: tank-0036-ln
+      capacity: 6710669
+      push_amt: 3355334
+      source_policy:
+        cltv_expiry_delta: 140
+        htlc_minimum_msat: 100
+        fee_base_msat: 2000
+        fee_proportional_millionths: 2500
+        htlc_maximum_msat: 6643563000
+      target_policy:
+        cltv_expiry_delta: 80
+        htlc_minimum_msat: 1000
+        fee_base_msat: 0
+        fee_proportional_millionths: 500
+        htlc_maximum_msat: 6643563000
+  addnode:
+  - tank-0006
+- name: tank-0008
+  ln:
+    lnd: true
+  lnd:
+    channels:
+    - id:
+        block: 500
+        index: 9
+      target: tank-0044-ln
+      capacity: 1500000
+      push_amt: 750000
+      source_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 499
+        htlc_maximum_msat: 1500000000
+      target_policy:
+        cltv_expiry_delta: 144
+        htlc_minimum_msat: 1
+        fee_base_msat: 1000
+        fee_proportional_millionths: 499
+        htlc_maximum_msat: 400000000
+    - id:
+        block: 500
+        index: 10
+      target: tank-0032-ln
+      capacity: 2000000
+      push_amt: 1000000
+      source_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 90
+        htlc_maximum_msat: 1980000000
+      target_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 10000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 90
+        htlc_maximum_msat: 1980000000
+    - id:
+        block: 500
+        index: 16
+      target: tank-0022-ln
+      capacity: 1620000
+      push_amt: 810000
+      source_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 1
+        htlc_maximum_msat: 1603800000
+      target_policy:
+        cltv_expiry_delta: 222
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 50
+        htlc_maximum_msat: 1603800000
+    - id:
+        block: 500
+        index: 26
+      target: tank-0030-ln
+      capacity: 1000000
+      push_amt: 500000
+      source_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 1
+        htlc_maximum_msat: 990000000
+      target_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 1
+        htlc_maximum_msat: 990000000
+  addnode:
+  - tank-0007
+- name: tank-0009
+  ln:
+    lnd: true
+  lnd:
+    channels:
+    - id:
+        block: 500
+        index: 13
+      target: tank-0048-ln
+      capacity: 90000
+      push_amt: 45000
+      source_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 0
+        fee_proportional_millionths: 1
+        htlc_maximum_msat: 89100000
+      target_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 0
+        fee_proportional_millionths: 1
+        htlc_maximum_msat: 89100000
+  addnode:
+  - tank-0008
+- name: tank-0010
+  ln:
+    lnd: true
+  lnd:
+    channels:
+    - id:
+        block: 500
+        index: 12
+      target: tank-0048-ln
+      capacity: 80000
+      push_amt: 40000
+      source_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 1
+        htlc_maximum_msat: 79200000
+      target_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 0
+        fee_proportional_millionths: 1
+        htlc_maximum_msat: 79200000
+    - id:
+        block: 500
+        index: 34
+      target: tank-0017-ln
+      capacity: 80000
+      push_amt: 40000
+      source_policy:
+        cltv_expiry_delta: 80
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 1
+        htlc_maximum_msat: 79200000
+      target_policy:
+        cltv_expiry_delta: 80
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 1
+        htlc_maximum_msat: 79200000
+    - id:
+        block: 500
+        index: 37
+      target: tank-0027-ln
+      capacity: 24639
+      push_amt: 12319
+      source_policy:
+        cltv_expiry_delta: 80
+        htlc_minimum_msat: 1000
+        fee_base_msat: 0
+        fee_proportional_millionths: 50
+        htlc_maximum_msat: 24393000
+      target_policy:
+        cltv_expiry_delta: 80
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 1
+        htlc_maximum_msat: 24393000
+  addnode:
+  - tank-0009
+- name: tank-0011
+  ln:
+    lnd: true
+  lnd:
+    channels:
+    - id:
+        block: 500
+        index: 62
+      target: tank-0033-ln
+      capacity: 500000
+      push_amt: 250000
+      source_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 167
+        htlc_maximum_msat: 495000000
+      target_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 100
+        fee_proportional_millionths: 100
+        htlc_maximum_msat: 495000000
+    - id:
+        block: 500
+        index: 66
+      target: tank-0045-ln
+      capacity: 500000
+      push_amt: 250000
+      source_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 100
+        htlc_maximum_msat: 495000000
+      target_policy:
+        cltv_expiry_delta: 80
+        htlc_minimum_msat: 1000
+        fee_base_msat: 0
+        fee_proportional_millionths: 30
+        htlc_maximum_msat: 495000000
+  addnode:
+  - tank-0010
+- name: tank-0012
+  ln:
+    lnd: true
+  lnd:
+    channels:
+    - id:
+        block: 500
+        index: 6
+      target: tank-0023-ln
+      capacity: 250000
+      push_amt: 125000
+      source_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 1000
+        htlc_maximum_msat: 247500000
+      target_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 1
+        htlc_maximum_msat: 247500000
+    - id:
+        block: 500
+        index: 7
+      target: tank-0024-ln
+      capacity: 2000000
+      push_amt: 1000000
+      source_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 1000
+        htlc_maximum_msat: 1980000000
+      target_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 1
+        htlc_maximum_msat: 1980000000
+  addnode:
+  - tank-0011
+- name: tank-0013
+  ln:
+    lnd: true
+  lnd:
+    channels:
+    - id:
+        block: 500
+        index: 29
+      target: tank-0021-ln
+      capacity: 100000
+      push_amt: 50000
+      source_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 0
+        fee_proportional_millionths: 1
+        htlc_maximum_msat: 99000000
+      target_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 1
+        htlc_maximum_msat: 99000000
+    - id:
+        block: 500
+        index: 32
+      target: tank-0046-ln
+      capacity: 100000
+      push_amt: 50000
+      source_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 1
+        htlc_maximum_msat: 99000000
+      target_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 1
+        htlc_maximum_msat: 99000000
+  addnode:
+  - tank-0012
+- name: tank-0014
+  ln:
+    lnd: true
+  lnd:
+    channels:
+    - id:
+        block: 500
+        index: 22
+      target: tank-0018-ln
+      capacity: 5000223
+      push_amt: 2500111
+      source_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 500
+        fee_proportional_millionths: 0
+        htlc_maximum_msat: 4950221000
+      target_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 1
+        htlc_maximum_msat: 4950221000
+  addnode:
+  - tank-0013
+- name: tank-0015
+  ln:
+    lnd: true
+  lnd:
+    channels:
+    - id:
+        block: 500
+        index: 75
+      target: tank-0049-ln
+      capacity: 16770000
+      push_amt: 8385000
+      source_policy:
+        cltv_expiry_delta: 140
+        htlc_minimum_msat: 100
+        fee_base_msat: 2000
+        fee_proportional_millionths: 2500
+        htlc_maximum_msat: 1677000000
+      target_policy:
+        cltv_expiry_delta: 72
+        htlc_minimum_msat: 1000
+        fee_base_msat: 2147483647
+        fee_proportional_millionths: 2147483647
+        htlc_maximum_msat: 15093000000
+    - id:
+        block: 500
+        index: 76
+      target: tank-0024-ln
+      capacity: 16770000
+      push_amt: 8385000
+      source_policy:
+        cltv_expiry_delta: 80
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 1000
+        htlc_maximum_msat: 1677000000
+      target_policy:
+        cltv_expiry_delta: 72
+        htlc_minimum_msat: 1000
+        fee_base_msat: 2147483647
+        fee_proportional_millionths: 2147483647
+        htlc_maximum_msat: 15093000000
+  addnode:
+  - tank-0014
+- name: tank-0016
+  ln:
+    lnd: true
+  lnd:
+    channels:
+    - id:
+        block: 500
+        index: 5
+      target: tank-0041-ln
+      capacity: 100000
+      push_amt: 50000
+      source_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 0
+        fee_proportional_millionths: 20
+        htlc_maximum_msat: 99000000
+      target_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 10
+        htlc_maximum_msat: 99000000
+    - id:
+        block: 500
+        index: 61
+      target: tank-0033-ln
+      capacity: 500000
+      push_amt: 250000
+      source_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 100
+        fee_proportional_millionths: 1
+        htlc_maximum_msat: 495000000
+      target_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 100
+        fee_proportional_millionths: 100
+        htlc_maximum_msat: 495000000
+  addnode:
+  - tank-0015
+- name: tank-0017
+  ln:
+    lnd: true
+  lnd:
+    channels: []
+  addnode:
+  - tank-0016
+- name: tank-0018
+  ln:
+    lnd: true
+  lnd:
+    channels:
+    - id:
+        block: 500
+        index: 3
+      target: tank-0019-ln
+      capacity: 1000000
+      push_amt: 500000
+      source_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 0
+        fee_proportional_millionths: 2000
+        htlc_maximum_msat: 990000000
+      target_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 0
+        fee_proportional_millionths: 750
+        htlc_maximum_msat: 990000000
+    - id:
+        block: 500
+        index: 8
+      target: tank-0028-ln
+      capacity: 1000000
+      push_amt: 500000
+      source_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 0
+        fee_proportional_millionths: 750
+        htlc_maximum_msat: 990000000
+      target_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 200
+        fee_proportional_millionths: 200
+        htlc_maximum_msat: 990000000
+    - id:
+        block: 500
+        index: 42
+      target: tank-0044-ln
+      capacity: 50000000
+      push_amt: 25000000
+      source_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 1
+        htlc_maximum_msat: 20000000000
+      target_policy:
+        cltv_expiry_delta: 144
+        htlc_minimum_msat: 1
+        fee_base_msat: 1000
+        fee_proportional_millionths: 499
+        htlc_maximum_msat: 20000000000
+  addnode:
+  - tank-0017
+- name: tank-0019
+  ln:
+    lnd: true
+  lnd:
+    channels:
+    - id:
+        block: 500
+        index: 2
+      target: tank-0023-ln
+      capacity: 250000
+      push_amt: 125000
+      source_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 1000
+        htlc_maximum_msat: 247500000
+      target_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 500
+        fee_proportional_millionths: 100
+        htlc_maximum_msat: 247500000
+  addnode:
+  - tank-0018
+- name: tank-0020
+  ln:
+    lnd: true
+  lnd:
+    channels:
+    - id:
+        block: 500
+        index: 74
+      target: tank-0049-ln
+      capacity: 16770000
+      push_amt: 8385000
+      source_policy:
+        cltv_expiry_delta: 72
+        htlc_minimum_msat: 1000
+        fee_base_msat: 2147483647
+        fee_proportional_millionths: 2147483647
+        htlc_maximum_msat: 15093000000
+      target_policy:
+        cltv_expiry_delta: 140
+        htlc_minimum_msat: 100
+        fee_base_msat: 2000
+        fee_proportional_millionths: 2500
+        htlc_maximum_msat: 1677000000
+  addnode:
+  - tank-0019
+- name: tank-0021
+  ln:
+    lnd: true
+  lnd:
+    channels:
+    - id:
+        block: 500
+        index: 57
+      target: tank-0040-ln
+      capacity: 40000
+      push_amt: 20000
+      source_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 100
+        fee_proportional_millionths: 10
+        htlc_maximum_msat: 39600000
+      target_policy:
+        cltv_expiry_delta: 80
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 1
+        htlc_maximum_msat: 39600000
+  addnode:
+  - tank-0020
+- name: tank-0022
+  ln:
+    lnd: true
+  lnd:
+    channels:
+    - id:
+        block: 500
+        index: 30
+      target: tank-0047-ln
+      capacity: 3000000
+      push_amt: 1500000
+      source_policy:
+        cltv_expiry_delta: 80
+        htlc_minimum_msat: 1000
+        fee_base_msat: 0
+        fee_proportional_millionths: 159
+        htlc_maximum_msat: 2970000000
+      target_policy:
+        cltv_expiry_delta: 222
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 2000
+        htlc_maximum_msat: 2970000000
+    - id:
+        block: 500
+        index: 35
+      target: tank-0031-ln
+      capacity: 84803717
+      push_amt: 42401858
+      source_policy:
+        cltv_expiry_delta: 144
+        htlc_minimum_msat: 1000
+        fee_base_msat: 500
+        fee_proportional_millionths: 1000
+        htlc_maximum_msat: 83955680000
+      target_policy:
+        cltv_expiry_delta: 222
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 2000
+        htlc_maximum_msat: 83955680000
+    - id:
+        block: 500
+        index: 45
+      target: tank-0042-ln
+      capacity: 1000000
+      push_amt: 500000
+      source_policy:
+        cltv_expiry_delta: 140
+        htlc_minimum_msat: 100
+        fee_base_msat: 2000
+        fee_proportional_millionths: 2500
+        htlc_maximum_msat: 990000000
+      target_policy:
+        cltv_expiry_delta: 222
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 2000
+        htlc_maximum_msat: 990000000
+    - id:
+        block: 500
+        index: 59
+      target: tank-0044-ln
+      capacity: 100000000
+      push_amt: 50000000
+      source_policy:
+        cltv_expiry_delta: 144
+        htlc_minimum_msat: 1
+        fee_base_msat: 1000
+        fee_proportional_millionths: 999
+        htlc_maximum_msat: 20000000000
+      target_policy:
+        cltv_expiry_delta: 222
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 2000
+        htlc_maximum_msat: 20000000000
+  addnode:
+  - tank-0021
+- name: tank-0023
+  ln:
+    lnd: true
+  lnd:
+    channels: []
+  addnode:
+  - tank-0022
+- name: tank-0024
+  ln:
+    lnd: true
+  lnd:
+    channels:
+    - id:
+        block: 500
+        index: 1
+      target: tank-0042-ln
+      capacity: 2000000
+      push_amt: 1000000
+      source_policy:
+        cltv_expiry_delta: 37
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 1700
+        htlc_maximum_msat: 1980000000
+      target_policy:
+        cltv_expiry_delta: 140
+        htlc_minimum_msat: 1000
+        fee_base_msat: 2000
+        fee_proportional_millionths: 2500
+        htlc_maximum_msat: 1980000000
+    - id:
+        block: 500
+        index: 36
+      target: tank-0035-ln
+      capacity: 550000
+      push_amt: 275000
+      source_policy:
+        cltv_expiry_delta: 80
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 1000
+        htlc_maximum_msat: 544500000
+      target_policy:
+        cltv_expiry_delta: 80
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 1
+        htlc_maximum_msat: 544500000
+    - id:
+        block: 500
+        index: 54
+      target: tank-0044-ln
+      capacity: 100000000
+      push_amt: 50000000
+      source_policy:
+        cltv_expiry_delta: 80
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 1000
+        htlc_maximum_msat: 20000000000
+      target_policy:
+        cltv_expiry_delta: 144
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 499
+        htlc_maximum_msat: 20000000000
+  addnode:
+  - tank-0023
+- name: tank-0025
+  ln:
+    lnd: true
+  lnd:
+    channels:
+    - id:
+        block: 500
+        index: 52
+      target: tank-0034-ln
+      capacity: 2000000
+      push_amt: 1000000
+      source_policy:
+        cltv_expiry_delta: 80
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 1
+        htlc_maximum_msat: 1980000000
+      target_policy:
+        cltv_expiry_delta: 80
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 1
+        htlc_maximum_msat: 1980000000
+  addnode:
+  - tank-0024
+- name: tank-0026
+  ln:
+    lnd: true
+  lnd:
+    channels:
+    - id:
+        block: 500
+        index: 60
+      target: tank-0027-ln
+      capacity: 50000
+      push_amt: 25000
+      source_policy:
+        cltv_expiry_delta: 80
+        htlc_minimum_msat: 1000
+        fee_base_msat: 0
+        fee_proportional_millionths: 50
+        htlc_maximum_msat: 49500000
+      target_policy:
+        cltv_expiry_delta: 80
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 1
+        htlc_maximum_msat: 49500000
+  addnode:
+  - tank-0025
+- name: tank-0027
+  ln:
+    lnd: true
+  lnd:
+    channels:
+    - id:
+        block: 500
+        index: 4
+      target: tank-0041-ln
+      capacity: 100000
+      push_amt: 50000
+      source_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1
+        fee_proportional_millionths: 100
+        htlc_maximum_msat: 99000000
+      target_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 10
+        htlc_maximum_msat: 99000000
+  addnode:
+  - tank-0026
+- name: tank-0028
+  ln:
+    lnd: true
+  lnd:
+    channels: []
+  addnode:
+  - tank-0027
+- name: tank-0029
+  ln:
+    lnd: true
+  lnd:
+    channels:
+    - id:
+        block: 500
+        index: 11
+      target: tank-0048-ln
+      capacity: 60000
+      push_amt: 30000
+      source_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 0
+        fee_proportional_millionths: 1
+        htlc_maximum_msat: 59400000
+      target_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 0
+        fee_proportional_millionths: 100
+        htlc_maximum_msat: 59400000
+    - id:
+        block: 500
+        index: 27
+      target: tank-0031-ln
+      capacity: 1100000
+      push_amt: 550000
+      source_policy:
+        cltv_expiry_delta: 200
+        htlc_minimum_msat: 1000
+        fee_base_msat: 500
+        fee_proportional_millionths: 2000
+        htlc_maximum_msat: 1089000000
+      target_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 0
+        fee_proportional_millionths: 1
+        htlc_maximum_msat: 1089000000
+  addnode:
+  - tank-0028
+- name: tank-0030
+  ln:
+    lnd: true
+  lnd:
+    channels: []
+  addnode:
+  - tank-0029
+- name: tank-0031
+  ln:
+    lnd: true
+  lnd:
+    channels:
+    - id:
+        block: 500
+        index: 17
+      target: tank-0039-ln
+      capacity: 3500000
+      push_amt: 1750000
+      source_policy:
+        cltv_expiry_delta: 144
+        htlc_minimum_msat: 1000
+        fee_base_msat: 500
+        fee_proportional_millionths: 1000
+        htlc_maximum_msat: 3465000000
+      target_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 1
+        htlc_maximum_msat: 3465000000
+    - id:
+        block: 500
+        index: 28
+      target: tank-0038-ln
+      capacity: 650000
+      push_amt: 325000
+      source_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 1
+        htlc_maximum_msat: 643500000
+      target_policy:
+        cltv_expiry_delta: 144
+        htlc_minimum_msat: 1000
+        fee_base_msat: 500
+        fee_proportional_millionths: 1000
+        htlc_maximum_msat: 643500000
+    - id:
+        block: 500
+        index: 31
+      target: tank-0044-ln
+      capacity: 20000000
+      push_amt: 10000000
+      source_policy:
+        cltv_expiry_delta: 144
+        htlc_minimum_msat: 1000
+        fee_base_msat: 2000
+        fee_proportional_millionths: 4000
+        htlc_maximum_msat: 20000000000
+      target_policy:
+        cltv_expiry_delta: 144
+        htlc_minimum_msat: 1
+        fee_base_msat: 1000
+        fee_proportional_millionths: 499
+        htlc_maximum_msat: 19800000000
+  addnode:
+  - tank-0030
+- name: tank-0032
+  ln:
+    lnd: true
+  lnd:
+    channels:
+    - id:
+        block: 500
+        index: 15
+      target: tank-0044-ln
+      capacity: 1000000
+      push_amt: 500000
+      source_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 10000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 90
+        htlc_maximum_msat: 1000000000
+      target_policy:
+        cltv_expiry_delta: 144
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 499
+        htlc_maximum_msat: 800000000
+    - id:
+        block: 500
+        index: 19
+      target: tank-0034-ln
+      capacity: 2000000
+      push_amt: 1000000
+      source_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 1
+        htlc_maximum_msat: 1980000000
+      target_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 10000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 90
+        htlc_maximum_msat: 1980000000
+  addnode:
+  - tank-0031
+- name: tank-0033
+  ln:
+    lnd: true
+  lnd:
+    channels:
+    - id:
+        block: 500
+        index: 63
+      target: tank-0045-ln
+      capacity: 200000
+      push_amt: 100000
+      source_policy:
+        cltv_expiry_delta: 80
+        htlc_minimum_msat: 1000
+        fee_base_msat: 0
+        fee_proportional_millionths: 30
+        htlc_maximum_msat: 198000000
+      target_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 100
+        fee_proportional_millionths: 100
+        htlc_maximum_msat: 198000000
+  addnode:
+  - tank-0032
+- name: tank-0034
+  ln:
+    lnd: true
+  lnd:
+    channels: []
+  addnode:
+  - tank-0033
+- name: tank-0035
+  ln:
+    lnd: true
+  lnd:
+    channels: []
+  addnode:
+  - tank-0034
+- name: tank-0036
+  ln:
+    lnd: true
+  lnd:
+    channels:
+    - id:
+        block: 500
+        index: 18
+      target: tank-0049-ln
+      capacity: 50000000
+      push_amt: 25000000
+      source_policy:
+        cltv_expiry_delta: 80
+        htlc_minimum_msat: 1000
+        fee_base_msat: 0
+        fee_proportional_millionths: 0
+        htlc_maximum_msat: 49500000000
+      target_policy:
+        cltv_expiry_delta: 80
+        htlc_minimum_msat: 1000
+        fee_base_msat: 0
+        fee_proportional_millionths: 0
+        htlc_maximum_msat: 49500000000
+    - id:
+        block: 500
+        index: 20
+      target: tank-0042-ln
+      capacity: 10000000
+      push_amt: 5000000
+      source_policy:
+        cltv_expiry_delta: 80
+        htlc_minimum_msat: 1000
+        fee_base_msat: 0
+        fee_proportional_millionths: 0
+        htlc_maximum_msat: 9900000000
+      target_policy:
+        cltv_expiry_delta: 80
+        htlc_minimum_msat: 1000
+        fee_base_msat: 0
+        fee_proportional_millionths: 0
+        htlc_maximum_msat: 9900000000
+    - id:
+        block: 500
+        index: 58
+      target: tank-0044-ln
+      capacity: 100000000
+      push_amt: 50000000
+      source_policy:
+        cltv_expiry_delta: 140
+        htlc_minimum_msat: 100
+        fee_base_msat: 2000
+        fee_proportional_millionths: 2500
+        htlc_maximum_msat: 20000000000
+      target_policy:
+        cltv_expiry_delta: 144
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 999
+        htlc_maximum_msat: 20000000000
+  addnode:
+  - tank-0035
+- name: tank-0037
+  ln:
+    lnd: true
+  lnd:
+    channels:
+    - id:
+        block: 500
+        index: 55
+      target: tank-0047-ln
+      capacity: 1000000
+      push_amt: 500000
+      source_policy:
+        cltv_expiry_delta: 50
+        htlc_minimum_msat: 1000
+        fee_base_msat: 0
+        fee_proportional_millionths: 10
+        htlc_maximum_msat: 50000000
+      target_policy:
+        cltv_expiry_delta: 80
+        htlc_minimum_msat: 1000
+        fee_base_msat: 0
+        fee_proportional_millionths: 600
+        htlc_maximum_msat: 990000000
+    - id:
+        block: 500
+        index: 64
+      target: tank-0045-ln
+      capacity: 250000
+      push_amt: 125000
+      source_policy:
+        cltv_expiry_delta: 50
+        htlc_minimum_msat: 1000
+        fee_base_msat: 100
+        fee_proportional_millionths: 10
+        htlc_maximum_msat: 50000000
+      target_policy:
+        cltv_expiry_delta: 80
+        htlc_minimum_msat: 1000
+        fee_base_msat: 0
+        fee_proportional_millionths: 30
+        htlc_maximum_msat: 247500000
+  addnode:
+  - tank-0036
+- name: tank-0038
+  ln:
+    lnd: true
+  lnd:
+    channels: []
+  addnode:
+  - tank-0037
+- name: tank-0039
+  ln:
+    lnd: true
+  lnd:
+    channels:
+    - id:
+        block: 500
+        index: 38
+      target: tank-0044-ln
+      capacity: 700000
+      push_amt: 350000
+      source_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 1
+        htlc_maximum_msat: 315000000
+      target_policy:
+        cltv_expiry_delta: 144
+        htlc_minimum_msat: 1
+        fee_base_msat: 1000
+        fee_proportional_millionths: 499
+        htlc_maximum_msat: 315000000
+  addnode:
+  - tank-0038
+- name: tank-0040
+  ln:
+    lnd: true
+  lnd:
+    channels:
+    - id:
+        block: 500
+        index: 56
+      target: tank-0046-ln
+      capacity: 51000
+      push_amt: 25500
+      source_policy:
+        cltv_expiry_delta: 80
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 1
+        htlc_maximum_msat: 50490000
+      target_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1234
+        fee_proportional_millionths: 1
+        htlc_maximum_msat: 50490000
+  addnode:
+  - tank-0039
+- name: tank-0041
+  ln:
+    lnd: true
+  lnd:
+    channels: []
+  addnode:
+  - tank-0040
+- name: tank-0042
+  ln:
+    lnd: true
+  lnd:
+    channels:
+    - id:
+        block: 500
+        index: 21
+      target: tank-0049-ln
+      capacity: 20000000
+      push_amt: 10000000
+      source_policy:
+        cltv_expiry_delta: 80
+        htlc_minimum_msat: 1000
+        fee_base_msat: 0
+        fee_proportional_millionths: 0
+        htlc_maximum_msat: 19800000000
+      target_policy:
+        cltv_expiry_delta: 80
+        htlc_minimum_msat: 1000
+        fee_base_msat: 0
+        fee_proportional_millionths: 0
+        htlc_maximum_msat: 19800000000
+  addnode:
+  - tank-0041
+- name: tank-0043
+  ln:
+    lnd: true
+  lnd:
+    channels: []
+  addnode:
+  - tank-0042
+- name: tank-0044
+  ln:
+    lnd: true
+  lnd:
+    channels:
+    - id:
+        block: 500
+        index: 72
+      target: tank-0049-ln
+      capacity: 99995000
+      push_amt: 49997500
+      source_policy:
+        cltv_expiry_delta: 140
+        htlc_minimum_msat: 100
+        fee_base_msat: 2000
+        fee_proportional_millionths: 2500
+        htlc_maximum_msat: 20000000000
+      target_policy:
+        cltv_expiry_delta: 144
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 499
+        htlc_maximum_msat: 20000000000
+  addnode:
+  - tank-0043
+- name: tank-0045
+  ln:
+    lnd: true
+  lnd:
+    channels: []
+  addnode:
+  - tank-0044
+- name: tank-0046
+  ln:
+    lnd: true
+  lnd:
+    channels:
+    - id:
+        block: 500
+        index: 33
+      target: tank-0047-ln
+      capacity: 75000
+      push_amt: 37500
+      source_policy:
+        cltv_expiry_delta: 80
+        htlc_minimum_msat: 1000
+        fee_base_msat: 0
+        fee_proportional_millionths: 1
+        htlc_maximum_msat: 74250000
+      target_policy:
+        cltv_expiry_delta: 40
+        htlc_minimum_msat: 1000
+        fee_base_msat: 1000
+        fee_proportional_millionths: 1
+        htlc_maximum_msat: 74250000
+  addnode:
+  - tank-0045
+- name: tank-0047
+  ln:
+    lnd: true
+  lnd:
+    channels: []
+  addnode:
+  - tank-0046
+- name: tank-0048
+  ln:
+    lnd: true
+  lnd:
+    channels: []
+  addnode:
+  - tank-0047
+- name: tank-0049
+  ln:
+    lnd: true
+  lnd:
+    channels: []
+  addnode:
+  - tank-0048
+
+plugins:
+  postDeploy:
+    simln:
+      entrypoint: "../../plugins/simln"
