@@ -10291,3 +10291,6 @@ plugins:
   postDeploy:
     simln:
       entrypoint: "../../plugins/simln"
+
+caddy:
+  enabled: true

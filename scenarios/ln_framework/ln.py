@@ -15,6 +15,27 @@ INSECURE_CONTEXT = ssl.SSLContext(ssl.PROTOCOL_TLS_CLIENT)
 INSECURE_CONTEXT.check_hostname = False
 INSECURE_CONTEXT.verify_mode = ssl.CERT_NONE
 
+# These values may need to be tweaked depending on the network being deployed.
+# Currently passes all tests and ln_init succeeds on these examples:
+#  test/data/LN_10.json
+#  test/data/LN_50.json
+#  test/data/LN_100.json
+# If any values are changed, you may need to re-build network.yaml with import-network.
+# Issues I encountered while setting on these values:
+# - Too many blocks generated, ln_init takes too long
+# - TX that distributes miner funds to LN wallets exceeds standard weight limit
+# - Too many miner distribution TXs result in too-long-mempool-chain
+# - Not enough UTXO value, forcing LN nodes to combine UTXOs to open large channels
+#   which results in the change output being too big which results in the tx
+#   outputs being ordered unexpectedly (which change at 0 and channel open at 1)
+# - LND actual fee rate ends up way off from the expected value
+# LN networks with more than 100 nodes and 500 channels may also need to tweak ln_init.py
+CHANNEL_OPEN_START_HEIGHT = 500
+CHANNEL_OPENS_PER_BLOCK = 200
+MAX_FEE_RATE = 80006  # s/vB
+FEE_RATE_DECREMENT = 400
+assert MAX_FEE_RATE - (FEE_RATE_DECREMENT * CHANNEL_OPENS_PER_BLOCK) > 1
+
 
 # https://github.com/lightningcn/lightning-rfc/blob/master/07-routing-gossip.md#the-channel_update-message
 # We use the field names as written in the BOLT as our canonical, internal field names.
@@ -68,9 +89,11 @@ class Policy:
     def to_lnd_chanpolicy(self, capacity):
         # LND requires a 1% reserve
         reserve = ((capacity * 99) // 100) * 1000
+        # "min htlc amount of 0 mSAT is below min htlc parameter of 1 mSAT"
+        min_htlc = 1
         return {
             "time_lock_delta": self.cltv_expiry_delta,
-            "min_htlc_msat": self.htlc_minimum_msat,
+            "min_htlc_msat": max(self.htlc_minimum_msat, min_htlc),
             "base_fee_msat": self.fee_base_msat,
             "fee_rate_ppm": self.fee_proportional_millionths,
             "max_htlc_msat": min(self.htlc_maximum_msat, reserve),
@@ -236,9 +259,9 @@ class CLN(LNNode):
         res = json.loads(response)
         return {"txid": res["txid"], "outpoint": f"{res['txid']}:{res['outnum']}"}
 
-    def createinvoice(self, sats, label, description="new invoice") -> str:
+    def createinvoice(self, sats, label) -> str:
         response = self.post(
-            "invoice", {"amount_msat": sats * 1000, "label": label, "description": description}
+            "invoice", {"amount_msat": sats * 1000, "label": label}
         )
         res = json.loads(response)
         return res["bolt11"]
@@ -336,8 +359,12 @@ class LND(LNNode):
 
     def connect(self, target_uri):
         pk, host = target_uri.split("@")
-        res = self.post("/v1/peers", data={"addr": {"pubkey": pk, "host": host}})
-        return json.loads(res)
+        response = self.post("/v1/peers", data={"addr": {"pubkey": pk, "host": host}})
+        res = json.loads(response)
+        if "status" in res and "initiated" in res["status"]:
+            return {}
+        else:
+            return res
 
     def channel(self, pk, capacity, push_amt, fee_rate):
         b64_pk = self.hex_to_b64(pk)
@@ -351,12 +378,10 @@ class LND(LNNode):
             },
         )
         res = json.loads(response)
-        res["txid"] = self.b64_to_hex(
-            res["result"]["chan_pending"]["txid"], reverse=True
-        )
-        res["outpoint"] = (
-            f"{res['txid']}:{res['result']['chan_pending']['output_index']}"
-        )
+        if "result" not in res:
+            raise Exception(res)
+        res["txid"] = self.b64_to_hex(res["result"]["chan_pending"]["txid"], reverse=True)
+        res["outpoint"] = f"{res['txid']}:{res['result']['chan_pending']['output_index']}"
         return res
 
     def update(self, txid_hex: str, policy: dict, capacity: int):
@@ -371,10 +396,9 @@ class LND(LNNode):
         )
         return json.loads(res)
 
-    def createinvoice(self, sats, label, description="new invoice") -> str:
-        b64_desc = base64.b64encode(description.encode("utf-8"))
+    def createinvoice(self, sats, label) -> str:
         response = self.post(
-            "/v1/invoices", data={"value": sats, "memo": label, "description_hash": b64_desc}
+            "/v1/invoices", data={"value": sats, "memo": label}
         )
         res = json.loads(response)
         return res["payment_request"]
