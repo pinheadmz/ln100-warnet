@@ -3,7 +3,7 @@
 import random
 import threading
 from commander import Commander
-
+from time import sleep
 
 class LNActivity(Commander):
     def set_test_params(self):
@@ -39,18 +39,21 @@ class LNActivity(Commander):
                 sats = 1000
                 tgt = random.choice(targets)
                 src = random.choice(sources)
-                inv = tgt.createinvoice(sats, "label")
                 res = None
                 try:
+                    inv = tgt.createinvoice(sats, "label")
                     res = src.payinvoice(inv)
+                    if 'error' in res:
+                        raise Exception(res['error']['message'])
                     if 'payment_error' in res['result'] and res['result']['payment_error'] != '':
                         raise Exception(res['result']['payment_error'])
-                    self.log.info(f"{src.name}->{tgt.name} sats: {sats} hops: {len(res['result']['payment_route']['hops'])}")
+                    self.log.info(f"{src.name}->{tgt.name} success! sats: {sats} hops: {len(res['result']['payment_route']['hops'])}")
                 except Exception as e:
-                    self.log.info(f"{src.name}->{tgt.name} sats: {sats} error: {e}")
+                    self.log.info(f"{src.name}->{tgt.name} error: {e}")
+                sleep(5)
 
         payment_threads = [
-            threading.Thread(target=make_payments, args=(self, sources, targets)) for _ in range(20)
+            threading.Thread(target=make_payments, args=(self, sources, targets)) for _ in range(max(20, len(self.lns)))
         ]
         for thread in payment_threads:
             thread.start()
