@@ -1,0 +1,20 @@
+milking fees:
+
+request withdraws from a service to a recipient on a path with an attacker node demanding high fees
+
+ask people at BitLab to help with phony LN storefront, stephen delorme
+
+maybe some nodes auto pay any invoice you send them
+- maybe you have an account with them so the deposit/withdraw thing works
+
+iterate up to 2026 and beyond, tabconf recurring projects
+
+2025 might be an "off year" bc of conflicting events
+
+what else can we do to improve for next year? round table meeting
+
+web store - what other "real world" elements can we simulate in there.
+
+collecting feedback during and right after the wargame.
+
+lnd force closes channels if theres weirdness: could be an attack vector

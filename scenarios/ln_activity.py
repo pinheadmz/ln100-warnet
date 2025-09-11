@@ -36,7 +36,7 @@ class LNActivity(Commander):
 
         def make_payments(self, sources, targets):
             while True:
-                sats = 1000
+                sats = 15000
                 tgt = random.choice(targets)
                 src = random.choice(sources)
                 res = None
@@ -50,10 +50,10 @@ class LNActivity(Commander):
                     self.log.info(f"{src.name}->{tgt.name} success! sats: {sats} hops: {len(res['result']['payment_route']['hops'])}")
                 except Exception as e:
                     self.log.info(f"{src.name}->{tgt.name} error: {e}")
-                sleep(5)
+                sleep(1)
 
         payment_threads = [
-            threading.Thread(target=make_payments, args=(self, sources, targets)) for _ in range(max(20, len(self.lns)))
+            threading.Thread(target=make_payments, args=(self, sources, targets)) for _ in range(4)
         ]
         for thread in payment_threads:
             thread.start()

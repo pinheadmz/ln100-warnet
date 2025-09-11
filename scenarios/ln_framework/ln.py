@@ -8,8 +8,6 @@ from time import sleep
 
 import requests
 
-# hard-coded deterministic lnd credentials
-ADMIN_MACAROON_HEX = "0201036c6e6402f801030a1062beabbf2a614b112128afa0c0b4fdd61201301a160a0761646472657373120472656164120577726974651a130a04696e666f120472656164120577726974651a170a08696e766f69636573120472656164120577726974651a210a086d616361726f6f6e120867656e6572617465120472656164120577726974651a160a076d657373616765120472656164120577726974651a170a086f6666636861696e120472656164120577726974651a160a076f6e636861696e120472656164120577726974651a140a057065657273120472656164120577726974651a180a067369676e6572120867656e657261746512047265616400000620b17be53e367290871681055d0de15587f6d1cd47d1248fe2662ae27f62cfbdc6"
 # Don't worry about lnd's self-signed certificates
 INSECURE_CONTEXT = ssl.SSLContext(ssl.PROTOCOL_TLS_CLIENT)
 INSECURE_CONTEXT.check_hostname = False
@@ -163,7 +161,7 @@ class CLN(LNNode):
 
     def reset_connection(self):
         self.conn = http.client.HTTPSConnection(
-            host=self.name, port=3010, timeout=5, context=INSECURE_CONTEXT
+            host=self.name, port=3010, timeout=60, context=INSECURE_CONTEXT
         )
 
     def setRune(self, rune):
@@ -187,7 +185,6 @@ class CLN(LNNode):
         post_header["Content-Length"] = str(len(body))
         post_header["Content-Type"] = "application/json"
         self.reset_connection()
-        self.log.info(f"CLN POST headers: {post_header}")
         self.conn.request(
             method="POST",
             url=uri,
@@ -222,9 +219,11 @@ class CLN(LNNode):
 
     def newaddress(self):
         self.createrune()
-        response = self.post("/v1/newaddr")
+        response = self.post("/v1/newaddr", data={"addresstype": "p2tr"})
         res = json.loads(response)
-        return res["bech32"]
+        if "p2tr" in res:
+            return res["p2tr"]
+        raise Exception(res)
 
     def uri(self):
         res = json.loads(self.post("/v1/getinfo"))
@@ -260,9 +259,7 @@ class CLN(LNNode):
         return {"txid": res["txid"], "outpoint": f"{res['txid']}:{res['outnum']}"}
 
     def createinvoice(self, sats, label) -> str:
-        response = self.post(
-            "invoice", {"amount_msat": sats * 1000, "label": label}
-        )
+        response = self.post("invoice", {"amount_msat": sats * 1000, "label": label})
         res = json.loads(response)
         return res["bolt11"]
 
@@ -288,20 +285,21 @@ class CLN(LNNode):
 
 
 class LND(LNNode):
-    def __init__(self, pod_name, ip_address):
+    def __init__(self, pod_name, ip_address, admin_macaroon_hex):
         super().__init__(pod_name, ip_address)
         self.conn = http.client.HTTPSConnection(
             host=pod_name, port=8080, timeout=5, context=INSECURE_CONTEXT
         )
+        self.admin_macaroon_hex = admin_macaroon_hex
         self.headers = {
-            "Grpc-Metadata-macaroon": ADMIN_MACAROON_HEX,
+            "Grpc-Metadata-macaroon": admin_macaroon_hex,
             "Connection": "close",
         }
         self.impl = "lnd"
 
     def reset_connection(self):
         self.conn = http.client.HTTPSConnection(
-            host=self.name, port=8080, timeout=5, context=INSECURE_CONTEXT
+            host=self.name, port=8080, timeout=60, context=INSECURE_CONTEXT
         )
 
     def get(self, uri):
@@ -340,9 +338,14 @@ class LND(LNNode):
         return stream
 
     def newaddress(self):
-        response = self.get("/v1/newaddress")
+        # Taproot signatures are a fixed length which improves
+        # the accuracy of fee estimation, and therefore our
+        # channel ID determinism.
+        response = self.get("/v1/newaddress?type=TAPROOT_PUBKEY")
         res = json.loads(response)
-        return res["address"]
+        if "address" in res:
+            return res["address"]
+        raise Exception(res)
 
     def walletbalance(self) -> int:
         res = self.get("/v1/balance/blockchain")
@@ -397,9 +400,7 @@ class LND(LNNode):
         return json.loads(res)
 
     def createinvoice(self, sats, label) -> str:
-        response = self.post(
-            "/v1/invoices", data={"value": sats, "memo": label}
-        )
+        response = self.post("/v1/invoices", data={"value": sats, "memo": label})
         res = json.loads(response)
         return res["payment_request"]
 
